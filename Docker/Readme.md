@@ -35,13 +35,13 @@
 
 ## Comman Docker Commmands: 
   1. Check running containers:
-      docker ps
+        - docker ps
   2. Check all containers (running + stopped):
-       docker ps -a
+        - docker ps -a
   3. List images:  
-       docker images
+        - docker images
   4. Pull a images:
-       docker pull nginx <images name added here>   
+        - docker pull nginx <images name added here>   
 ---
 
 ## Running Containers:
