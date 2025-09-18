@@ -67,4 +67,40 @@
     5.Delete images:
          - docker rmi <image_id>
 ---          
-           
+
+ ## Build & run container:
+    1. Build images:
+       - docker build -t <name of created>
+    2. Run Container:
+       - docker run -it --name -pause -P 8120 paus
+    3. check running containers:
+       - docker ps 
+       - docker ps -a
+---
+
+## Container Management:
+      * Access containers shell:
+          - docker exec -it netfix /bin/bash
+      * stop containers
+           - docker stop netfix
+      * start containesr 
+            - docker start netfix
+      * Remove container
+             - docker rm -f netfix
+---
+## Network & IP:
+    * check IP address:
+       - ip addr
+       - if config -a
+    * Inpect container for IP:
+        - docker inspect <container_id>
+ ---
+ ## Cleanup Commands
+     * stop all container 
+         - dockler stop $(docker ps-q)
+     * Remove all containers:
+          - docker rm $(docker ps-aq)
+     * Remove all images: 
+           - docker rmi $(docker image -q)
+
+---          
