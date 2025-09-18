@@ -46,25 +46,25 @@
 
 ## Running Containers:
     1 Run Nginx container:
-         - docker run -itd -p 80:80 nginx
+      - docker run -itd -p 80:80 nginx
          i - Interactive mode
          t - Allocated terminal
          d - Detached mode
          p 80:80 - maps host port 80 to container on port 80
-    2 Run Container with a name:   
-          - docker run -itd --name --nmae <name added here> -p 80:80 nginx
+    2 Run Container with a name:
+        - docker run -itd --name --nmae <name added here> -p 80:80 nginx
 
 ---          
 ## Manging Containers:
     1. Enter into a containers:
-          - docker exec -it <container_id> /bin/bash
+        - docker exec -it <container_id> /bin/bash
     2. Exit from containers:
-          - exit
+         - exit
     3. Stop containers:
-           - docker stop <container_id>      
+         - docker stop <container_id>      
     4. Delete containers:
-           - docker rm -f <container_id>
+         - docker rm -f <container_id>
     5.Delete images:
-           - docker rmi <image_id>
+         - docker rmi <image_id>
 ---          
            
