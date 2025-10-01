@@ -237,7 +237,7 @@ kubectl get svc
 ````
 ````
 kubectl exec -it pod-yoga -- curl <clusterip>
-``
+```
 ---
 
 *   `kind: Pod`: Specifies that we are creating a Pod.
