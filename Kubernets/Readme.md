@@ -238,25 +238,24 @@ kubectl get pods
 kubectl get svc
 kubectl exec -it pod-yoga -- curl <clusterip>
 ````
-````
 ---
-*   `kind: Pod`: Specifies that we are creating a Pod.
-*   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
-*   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
+*   kind: Pod: Specifies that we are creating a Pod.
+*   metadata: Contains the name and labels for the Pod. Labels are used to identify and group objects.
+*   spec.containers: A list of containers to run in the Pod. Here, we define one container using the nginx image.
 
 ---
 ## Common Kubectl Commands
 ---
-`kubectl` is the command-line tool for interacting with a Kubernetes cluster. Here are some essential commands:
+kubectl is the command-line tool for interacting with a Kubernetes cluster. Here are some essential commands:
 
 | Command                               | Description                                                              |
 | ------------------------------------- | ------------------------------------------------------------------------ |
-| `kubectl apply -f <filename>.yaml`    | Creates or updates resources from a YAML file.                           |
-| `kubectl get pods`                    | Lists all pods in the current namespace.                                 |
-| `kubectl get svc`                     | Lists all services in the current namespace.                             |
-| `kubectl logs <pod-name>`             | Displays the logs from a container in a pod. Essential for debugging.    |
-| `kubectl exec -it <pod-name> -- /bin/bash` | Opens an interactive shell inside a running container for debugging. |
-| `kubectl describe pod <pod-name>`     | Shows detailed information about a specific pod, including events.       |
-| `kubectl delete -f <filename>.yaml`   | Deletes the resources defined in a YAML file.                            |
+| kubectl apply -f <filename>.yaml    | Creates or updates resources from a YAML file.                           |
+| kubectl get pods                    | Lists all pods in the current namespace.                                 |
+| kubectl get svc                     | Lists all services in the current namespace.                             |
+| kubectl logs <pod-name>             | Displays the logs from a container in a pod. Essential for debugging.    |
+| kubectl exec -it <pod-name> -- /bin/bash | Opens an interactive shell inside a running container for debugging. |
+| kubectl describe pod <pod-name>     | Shows detailed information about a specific pod, including events.       |
+| kubectl delete -f <filename>.yaml   | Deletes the resources defined in a YAML file.                            |
 
 ---
