@@ -171,7 +171,6 @@ Kubernetes is a powerful container orchestration platform with several key benef
 *   **Scalability**: You can scale your application up or down with a simple command, or automatically based on CPU usage. This allows your application to adapt to changing workloads seamlessly.
 *   **Load Balancing**: Kubernetes can automatically distribute network traffic across multiple container instances, ensuring that the workload is spread evenly and preventing any single instance from being overloaded.
 
----
 
 ## Amazon EKS
 
@@ -180,7 +179,6 @@ Kubernetes is a powerful container orchestration platform with several key benef
 *   **What it does**: EKS manages the Kubernetes control plane (the "brain" of the cluster) for you across multiple AWS availability zones to ensure high availability.
 *   **Why it's useful**: It handles complex tasks like patching, node provisioning, and updates, allowing you to focus on building and deploying your applications instead of managing infrastructure [1].
 
----
 
 ## Understanding YAML Files
 
@@ -193,7 +191,6 @@ In Kubernetes, you define all your objects and application configurations in YAM
 *   **Deployment**: A higher-level object that manages ReplicaSets and provides declarative updates to applications. This is the most common way to deploy a stateless application. It handles rolling updates and rollbacks gracefully.
 *   **Service**: An abstract way to expose an application running on a set of Pods as a network service. It provides a stable IP address and DNS name, and load balances traffic to the pods it targets.
 
-  ----
 
   ````
 vim pod.yaml
@@ -238,13 +235,11 @@ kubectl get svc
 ````
 kubectl exec -it pod-yoga -- curl <clusterip>
 ```
----
 
 *   `kind: Pod`: Specifies that we are creating a Pod.
 *   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
 *   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
 
----
 
 ## Common Kubectl Commands
 
