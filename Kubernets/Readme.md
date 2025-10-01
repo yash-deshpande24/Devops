@@ -199,7 +199,8 @@ This file defines a simple Pod that runs a single Nginx container.
 
 Pod.yaml
 ---
-```apiVersion: v1
+```bash
+apiVersion: v1
 kind: Pod
 metadata:
   name: pod-nginx
@@ -210,7 +211,8 @@ spec:
     - name: c1
       image: abhipraydh96/nginx
       ports:
-        - containerPort: 80```
+        - containerPort: 80
+'''
    ---     
 
 *   `kind: Pod`: Specifies that we are creating a Pod.
