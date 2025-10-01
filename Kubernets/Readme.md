@@ -56,11 +56,13 @@ This document summarizes foundational concepts in containerization and orchestra
 - Native clustering tool for Docker
 - Manages multiple containers across nodes
 - Initialization:
+   ```bash
     docker swarm init
 - Containers run in a distributed fashion
 - Key components: Pods, Deployments, Services
 
-Sample YAML: Pod Definition
+## Sample YAML: Pod Definition
+```bash
 apiVersion: v1
 kind: Pod
 metadata:
@@ -72,5 +74,3 @@ spec:
       ports:
         - containerPort: 80
 ____
-
-  
