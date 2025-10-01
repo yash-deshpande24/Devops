@@ -171,27 +171,32 @@ Kubernetes is a powerful container orchestration platform with several key benef
 *   **Scalability**: You can scale your application up or down with a simple command, or automatically based on CPU usage. This allows your application to adapt to changing workloads seamlessly.
 *   **Load Balancing**: Kubernetes can automatically distribute network traffic across multiple container instances, ensuring that the workload is spread evenly and preventing any single instance from being overloaded.
 
+---
 
 ## Amazon EKS
 
+---
 **Amazon Elastic Kubernetes Service (EKS)** is a managed service from AWS that makes it easy to run Kubernetes without needing to install and operate your own Kubernetes control plane [1].
 
 *   **What it does**: EKS manages the Kubernetes control plane (the "brain" of the cluster) for you across multiple AWS availability zones to ensure high availability.
 *   **Why it's useful**: It handles complex tasks like patching, node provisioning, and updates, allowing you to focus on building and deploying your applications instead of managing infrastructure [1].
 
+---
 
 ## Understanding YAML Files
+---
 
 In Kubernetes, you define all your objects and application configurations in YAML files. These files describe the *desired state* of your system [8].
 
 ### Key Kubernetes Objects
 
+---
 *   **Pod**: The smallest and most basic deployable object in Kubernetes. It represents a single instance of your application and can hold one or more containers.
 *   **ReplicaSet**: Ensures that a specified number of pod replicas are running at any given time. Its main job is to maintain a stable set of pods.
 *   **Deployment**: A higher-level object that manages ReplicaSets and provides declarative updates to applications. This is the most common way to deploy a stateless application. It handles rolling updates and rollbacks gracefully.
 *   **Service**: An abstract way to expose an application running on a set of Pods as a network service. It provides a stable IP address and DNS name, and load balances traffic to the pods it targets.
 
-
+---
   ````
 vim pod.yaml
 ````
@@ -234,14 +239,14 @@ kubectl get svc
 kubectl exec -it pod-yoga -- curl <clusterip>
 ````
 ````
-
+---
 *   `kind: Pod`: Specifies that we are creating a Pod.
 *   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
 *   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
 
-
+---
 ## Common Kubectl Commands
-
+---
 `kubectl` is the command-line tool for interacting with a Kubernetes cluster. Here are some essential commands:
 
 | Command                               | Description                                                              |
