@@ -46,15 +46,13 @@ This document summarizes foundational concepts in containerization and orchestra
 
 - Public registry to **push** and **pull** Docker images  
   Example:  
-  ```bash
-  docker push yashdeshpande/yoga
+  `docker push yashdeshpande/yoga`
 
 ## What is Docker Swam
 - Native clustering tool for Docker
 - Manages multiple containers across nodes
-- Initialization:
-   ```bash
-    docker swarm init
+- Initialization:bash
+    `docker swarm init`
 - Containers run in a distributed fashion
 - Key components: Pods, Deployments, Services
 
@@ -123,22 +121,22 @@ ___
   - Select Kubernetes 1.33
 
 Commands:
-  - `kubectl get nodes`
-  - `kubectl get node -o wide`
+  - ``kubectl get nodes``
+  - ``kubectl get node -o wide``
   - Create pods
-    - `kubectl run pod-1 --image=nginx`
+    - ``kubectl run pod-1 --image=nginx``
   - List command
-    - `kubectl get pods`
+    - ``kubectl get pods``
   - Pods command in detail
-    - `kubectl get pods -o wide`
+    - ``kubectl get pods -o wide``
   - Show description about pod
-    - `kubectl desc pod pod-1`
-    - `kubectl describe pod pod-1`
+    - ``kubectl desc pod pod-1``
+    - ``kubectl describe pod pod-1``
   - When we login under a pod's commands:
-    - `kubectl exec -it pod-1 bash`
+    - ``kubectl exec -it pod-1 bash``
     - exit
 ## Lock check
-  - `kubectl logs pod prod-1`
+  - ``kubectl logs pod prod-1``
 
 ## Services
   1) cluster ip (default service)
