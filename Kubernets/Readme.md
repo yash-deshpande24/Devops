@@ -71,9 +71,21 @@ spec:
       ports:
         - containerPort: 80
 ```
-___
-# Days 2
+## Difference Between Docker Swarm and Kubernetes
 
+| Feature | Docker Swarm | Kubernetes |
+| :--- | :--- | :--- |
+| Installation & Setup | Simple and integrated with Docker Engine | More complex, separate CLI, steeper learning curve |
+| Application Deployment | Uses YAML or Docker Compose | Flexible with pods, deployments, namespaces |
+| Scaling | Quick scaling but no automatic scaling | Automatic scaling, self-healing |
+| High Availability | Duplicate services and reschedule containers | Advanced fault tolerance, rolling updates |
+| Monitoring | Requires third-party tools | Built-in and third-party integration |
+| Security | TLS for node communication and access control | RBAC, SSL/TLS, and advanced security features |
+| Load Balancing | Built-in automatic load balancing using DNS | Requires integrations like Nginx Ingress |
+| Networking | Overlay network for secure cross-host communication | Each pod gets unique IP, shared network namespace |
+___
+
+# Days 2
 ---
 
 ### What is Kubernetes?
@@ -105,3 +117,46 @@ ___
 
 3. Kind cluster (practice)
   - Killercoda free web based practice
+
+### Open a website of Killercoda
+  - Select option Playgrounds
+  - Select Kubernetes 1.33
+
+Commands:
+  - `kubectl get nodes`
+  - `kubectl get node -o wide`
+  - Create pods
+    - `kubectl run pod-1 --image=nginx`
+  - List command
+    - `kubectl get pods`
+  - Pods command in detail
+    - `kubectl get pods -o wide`
+  - Show description about pod
+    - `kubectl desc pod pod-1`
+    - `kubectl describe pod pod-1`
+  - When we login under a pod's commands:
+    - `kubectl exec -it pod-1 bash`
+    - exit
+## Lock check
+  - `kubectl logs pod prod-1`
+
+## Services
+  1) cluster ip (default service)
+  2) nodeport (instance ip)
+  3) load balances (different pods to be access/external access)
+
+1) cluster IP + through access :-
+  - `kubectl expose pod prod-1`
+  - `port = 80, target-port = 80`
+  - `type = ClusterIP`
+  - `kubectl get pods`
+  - `kubectl get svc`
+  - `kubectl exec -it pod-1 -- curl <ip-address>`
+
+2) NodePort
+  - `kubectl run prod-blue --image= abhipraydh96/blue`
+  - `kubectl get pods`
+  - `kubectl expose pod --port=80 --target-port=80 --type=nodeport`
+  - `kubectl get svc`
+---    
+          
