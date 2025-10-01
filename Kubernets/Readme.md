@@ -235,7 +235,6 @@ kubectl exec -it pod-yoga -- curl <clusterip>
 ````
 ````
 
-
 *   `kind: Pod`: Specifies that we are creating a Pod.
 *   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
 *   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
