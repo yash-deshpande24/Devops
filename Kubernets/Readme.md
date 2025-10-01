@@ -163,19 +163,6 @@ Commands:
 Day3 
 ---
 
-## Table of Contents
-
-1.  [Kubernetes Advantages](#kubernetes-advantages)
-2.  [Amazon EKS (Elastic Kubernetes Service)](#amazon-eks)
-3.  [Understanding YAML Files](#understanding-yaml-files)
-    *   [Key Kubernetes Objects](#key-kubernetes-objects)
-    *   [Example: Pod.yaml](#example-podyaml)
-    *   [Example: Service.yaml](#example-serviceyaml)
-4.  [Common Kubectl Commands](#common-kubectl-commands)
-5.  [Technologies Mentioned](#technologies-mentioned)
-
----
-
 ## Kubernetes Advantages
 
 Kubernetes is a powerful container orchestration platform with several key benefits [8]:
@@ -210,8 +197,9 @@ In Kubernetes, you define all your objects and application configurations in YAM
 
 This file defines a simple Pod that runs a single Nginx container.
 
-# Pod.yaml
-``apiVersion: v1
+Pod.yaml
+---
+```apiVersion: v1
 kind: Pod
 metadata:
   name: pod-nginx
@@ -222,7 +210,8 @@ spec:
     - name: c1
       image: abhipraydh96/nginx
       ports:
-        - containerPort: 80``
+        - containerPort: 80```
+   ---     
 
 *   `kind: Pod`: Specifies that we are creating a Pod.
 *   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
