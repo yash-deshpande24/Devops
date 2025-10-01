@@ -1,8 +1,5 @@
 # 🚀 Day 1: Kubernetes & Docker Basics
 
-📅 Date: 23/03/2023  
-🧠 Author: Yash Deshpande
-
 ---
 
 ## 📌 Overview
@@ -73,4 +70,38 @@ spec:
       image: yashdeshpande/yoga
       ports:
         - containerPort: 80
-____
+```
+___
+# Days 2
+
+---
+
+### What is Kubernetes?
+- Nodes = Instances
+- Kubernetes is an open-source platform developed by Google.
+  
+### Why do we need Kubernetes?
+- Container management: running 1-2 containers
+- High Availability - Restarts
+- Scalability - Increase or decrease
+- Load balancing: user traffic across
+- Portability - Run anywhere
+- Automation - deployment, rollback, update made easy
+
+  ### What is Kubernetes Architecture?
+- Controls plan make decisions
+- Worker nodes run your apps
+<img width="2048" height="2048" alt="image" src="https://github.com/user-attachments/assets/2f998b77-7c25-479d-8ae2-1202a9d5be19" />
+
+### How to be use Kubernetes?
+1. Kubernetes cluster:
+  - minikube (single K8s cluster) - practice
+  - kubeadm (multi node K8s cluster)
+
+2. Cloud:
+  - AWS: EKS
+  - Azure: AKS
+  - GCP: GKE
+
+3. Kind cluster (practice)
+  - Killercoda free web based practice
