@@ -193,51 +193,57 @@ In Kubernetes, you define all your objects and application configurations in YAM
 *   **Deployment**: A higher-level object that manages ReplicaSets and provides declarative updates to applications. This is the most common way to deploy a stateless application. It handles rolling updates and rollbacks gracefully.
 *   **Service**: An abstract way to expose an application running on a set of Pods as a network service. It provides a stable IP address and DNS name, and load balances traffic to the pods it targets.
 
-### Example: Pod.yaml
+  ----
 
-This file defines a simple Pod that runs a single Nginx container.
+  ````
+vim pod.yaml
+````
 
-Pod.yaml
----
-```bash
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-nginx
+````
+apiVersion: v1 
+kind: Pod 
+metadata: 
+  name: pod-yoga 
   labels:
-    app: nginx
-spec:
+    app: yoga
+spec: 
   containers:
-    - name: c1
-      image: abhipraydh96/nginx
-      ports:
-        - containerPort: 80
-'''
-   ---     
+   - name: c1 
+     image: abhipraydh96/yoga 
+     ports:
+      - containerPort: 80
+
+---
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: svc-yoga 
+spec:
+  selector: 
+    app: yoga 
+  ports:
+   - port: 80
+     protocol: "TCP"
+     targetPort: 80
+  type: ClusterIP
+````
+
+````
+kubectl apply -f pod.yaml
+````
+````
+kubectl get pods
+kubectl get svc
+````
+````
+kubectl exec -it pod-yoga -- curl <clusterip>
+``
+____  
 
 *   `kind: Pod`: Specifies that we are creating a Pod.
 *   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
 *   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
 
-### Example: Service.yaml
-
-This file defines a Service that exposes the Nginx Pods to the network.
-
-# Service.yamlapiVersion: v1
-kind: Service
-metadata:
-  name: svc-nginx
-spec:
-  selector:
-    app: nginx
-  ports:
-    - port: 80
-      protocol: "TCP"
-      targetPort: 80
-
-*   `kind: Service`: Specifies that we are creating a Service.
-*   `spec.selector`: This is how the Service finds which Pods to send traffic to. It selects any Pod with the label `app: nginx`.
-*   `spec.ports`: Defines the port mapping. It exposes port `80` and forwards traffic to `targetPort: 80` on the selected Pods.
 
 ---
 
