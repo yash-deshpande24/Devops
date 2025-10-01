@@ -1,4 +1,4 @@
-# 🚀 Day 1: Kubernetes & Docker Basics
+# 🚀 Day 1
 
 ---
 
@@ -160,3 +160,108 @@ Commands:
   - `kubectl get svc`
 ---    
           
+Day3 
+---
+
+## Table of Contents
+
+1.  [Kubernetes Advantages](#kubernetes-advantages)
+2.  [Amazon EKS (Elastic Kubernetes Service)](#amazon-eks)
+3.  [Understanding YAML Files](#understanding-yaml-files)
+    *   [Key Kubernetes Objects](#key-kubernetes-objects)
+    *   [Example: Pod.yaml](#example-podyaml)
+    *   [Example: Service.yaml](#example-serviceyaml)
+4.  [Common Kubectl Commands](#common-kubectl-commands)
+5.  [Technologies Mentioned](#technologies-mentioned)
+
+---
+
+## Kubernetes Advantages
+
+Kubernetes is a powerful container orchestration platform with several key benefits [8]:
+
+*   **Self-Healing**: Kubernetes automatically restarts containers that fail, replaces and reschedules containers when nodes die, and kills containers that don't respond to user-defined health checks. This ensures application uptime without manual intervention.
+*   **Scalability**: You can scale your application up or down with a simple command, or automatically based on CPU usage. This allows your application to adapt to changing workloads seamlessly.
+*   **Load Balancing**: Kubernetes can automatically distribute network traffic across multiple container instances, ensuring that the workload is spread evenly and preventing any single instance from being overloaded.
+
+---
+
+## Amazon EKS
+
+**Amazon Elastic Kubernetes Service (EKS)** is a managed service from AWS that makes it easy to run Kubernetes without needing to install and operate your own Kubernetes control plane [1].
+
+*   **What it does**: EKS manages the Kubernetes control plane (the "brain" of the cluster) for you across multiple AWS availability zones to ensure high availability.
+*   **Why it's useful**: It handles complex tasks like patching, node provisioning, and updates, allowing you to focus on building and deploying your applications instead of managing infrastructure [1].
+
+---
+
+## Understanding YAML Files
+
+In Kubernetes, you define all your objects and application configurations in YAML files. These files describe the *desired state* of your system [8].
+
+### Key Kubernetes Objects
+
+*   **Pod**: The smallest and most basic deployable object in Kubernetes. It represents a single instance of your application and can hold one or more containers.
+*   **ReplicaSet**: Ensures that a specified number of pod replicas are running at any given time. Its main job is to maintain a stable set of pods.
+*   **Deployment**: A higher-level object that manages ReplicaSets and provides declarative updates to applications. This is the most common way to deploy a stateless application. It handles rolling updates and rollbacks gracefully.
+*   **Service**: An abstract way to expose an application running on a set of Pods as a network service. It provides a stable IP address and DNS name, and load balances traffic to the pods it targets.
+
+### Example: Pod.yaml
+
+This file defines a simple Pod that runs a single Nginx container.
+
+# Pod.yaml
+``apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nginx
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: c1
+      image: abhipraydh96/nginx
+      ports:
+        - containerPort: 80``
+
+*   `kind: Pod`: Specifies that we are creating a Pod.
+*   `metadata`: Contains the name and labels for the Pod. Labels are used to identify and group objects.
+*   `spec.containers`: A list of containers to run in the Pod. Here, we define one container using the `nginx` image.
+
+### Example: Service.yaml
+
+This file defines a Service that exposes the Nginx Pods to the network.
+
+# Service.yamlapiVersion: v1
+kind: Service
+metadata:
+  name: svc-nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      protocol: "TCP"
+      targetPort: 80
+
+*   `kind: Service`: Specifies that we are creating a Service.
+*   `spec.selector`: This is how the Service finds which Pods to send traffic to. It selects any Pod with the label `app: nginx`.
+*   `spec.ports`: Defines the port mapping. It exposes port `80` and forwards traffic to `targetPort: 80` on the selected Pods.
+
+---
+
+## Common Kubectl Commands
+
+`kubectl` is the command-line tool for interacting with a Kubernetes cluster. Here are some essential commands:
+
+| Command                               | Description                                                              |
+| ------------------------------------- | ------------------------------------------------------------------------ |
+| `kubectl apply -f <filename>.yaml`    | Creates or updates resources from a YAML file.                           |
+| `kubectl get pods`                    | Lists all pods in the current namespace.                                 |
+| `kubectl get svc`                     | Lists all services in the current namespace.                             |
+| `kubectl logs <pod-name>`             | Displays the logs from a container in a pod. Essential for debugging.    |
+| `kubectl exec -it <pod-name> -- /bin/bash` | Opens an interactive shell inside a running container for debugging. |
+| `kubectl describe pod <pod-name>`     | Shows detailed information about a specific pod, including events.       |
+| `kubectl delete -f <filename>.yaml`   | Deletes the resources defined in a YAML file.                            |
+
+---
