@@ -68,6 +68,37 @@ docker push localhost:5000/myimage
 ```bash
 docker pull localhost:5000/myimage
 ```
+## ⚙️ Quick Commands for Docker Registry
+
+### 🔹 Step 1: Login to Docker Registry
+```bash
+docker login
+```
+> Use your Docker Hub username and password.
+
+---
+
+### 🔹 Step 2: Tag (Rename) Your Image
+```bash
+docker tag <local_image_name>:<tag> <dockerhub_username>/<repository_name>:<tag>
+```
+**Example:**
+```bash
+docker tag myapp:latest deshpandeyashrajesh/myapp:v1
+```
+✅ This prepares your image for upload by assigning it a new name (tag).
+
+---
+
+### 🔹 Step 3: Push Image to Docker Hub
+```bash
+docker push <dockerhub_username>/<repository_name>:<tag>
+```
+**Example:**
+```bash
+docker push deshpandeyashrajesh/myapp:v1
+```
+
 
 ### 🧰 Helpful Commands
 | Command | Description |
