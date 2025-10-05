@@ -55,8 +55,9 @@ COPY . .
 
 # Run the application
 ENTRYPOINT ["python", "run.py"]
+"""
 
---- 
+
 You can also tag it with multiple versions:
 
 Always show details
@@ -95,4 +96,3 @@ Faster deployments
 Fewer vulnerabilities
 
 Cleaner and modular Dockerfile
-"""
