@@ -84,10 +84,10 @@ That’s why the image size reduces drastically.
 ---
 
 ## 🧰 Useful Commands
-Command	Description
-docker images	List all built images
-docker history <image>	Show image layer sizes
-docker rmi <image>	Remove an image
-docker run -d -p 5000:5000 flask-app-mini	Run the Flask container
+- Command	Description
+- docker images	List all built images
+- docker history <image>	Show image layer sizes
+- docker rmi <image>	Remove an image
+- docker run -d -p 5000:5000 flask-app-mini	Run the Flask container
 
 ---
