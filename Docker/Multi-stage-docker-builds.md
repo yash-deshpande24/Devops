@@ -61,3 +61,31 @@ ENTRYPOINT ["python", "run.py"]
 
 ```
 ---
+
+## 🧠 Explanation of Dockerfile?
+
+Line	Description
+FROM python:3.7 AS builder	Stage 1: Full Python environment for installing dependencies
+WORKDIR /app	Sets the working directory inside container
+COPY requirements.txt .	Copies dependency list into the container
+RUN pip install -r requirements.txt	Installs all Python dependencies
+FROM python:3.7-slim	Stage 2: Lightweight Python image (~140 MB)
+COPY --from=builder ...	Copies dependencies from Stage 1
+COPY . .	Copies your app source code
+ENTRYPOINT ["python","run.py"]	Defines container start command
+📦 Why Image Size Reduces (1 GB → 140 MB)
+Stage	Base Image	Size	Purpose
+Builder	python:3.7	~1.04 GB	Full Python + Build tools
+Final	python:3.7-slim	~140 MB	Minimal runtime environment
+
+In the final image, only essential runtime dependencies are copied — not temporary build files or pip cache.
+That’s why the image size reduces drastically.
+
+## 🧰 Useful Commands
+Command	Description
+docker images	List all built images
+docker history <image>	Show image layer sizes
+docker rmi <image>	Remove an image
+docker run -d -p 5000:5000 flask-app-mini	Run the Flask container
+
+---
