@@ -81,6 +81,8 @@ Final	python:3.7-slim	~140 MB	Minimal runtime environment
 In the final image, only essential runtime dependencies are copied — not temporary build files or pip cache.
 That’s why the image size reduces drastically.
 
+---
+
 ## 🧰 Useful Commands
 Command	Description
 docker images	List all built images
