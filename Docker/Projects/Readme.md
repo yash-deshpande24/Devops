@@ -130,5 +130,3 @@ volumes:
 - Copy nginx config from another repo
 - Update nginx configuration in `default.conf`
 - Add nginx service to `docker-compose.yml`
-
-''' 
