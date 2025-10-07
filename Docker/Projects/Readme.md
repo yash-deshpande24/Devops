@@ -131,12 +131,4 @@ volumes:
 - Update nginx configuration in `default.conf`
 - Add nginx service to `docker-compose.yml`
 
-'''  
-
-# Write to file
-file_name = "Docker_Three_Tier_Application_Docker_Compose.md"
-with open(file_name, "w") as f:
-    f.write(md_content)
-
-file_name
-Asset 1 of 2
+''' 
