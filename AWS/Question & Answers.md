@@ -945,12 +945,6 @@ sudo mount -t nfs4 -o nfsvers=4.1 fs-12345678.efs.us-east-1.amazonaws.com:/ /mnt
 
 ---
 
-# AWS Cloud Interview FAQ
-
-This file contains concise Q&A notes, diagrams, and concept tables for AWS topics: VPC, EC2, IAM, EFS, S3, CloudWatch, Auto Scaling.
-
----
-
 ## 🌐 AWS VPC (Virtual Private Cloud)
 
 ### 1. What is VPC?
