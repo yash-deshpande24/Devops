@@ -179,3 +179,267 @@ This saves cost 💰 and ensures high availability 🚀.
 **👉** CloudWatch monitors metrics → triggers alarms → alarms activate Auto Scaling policies → AWS adds/removes instances automatically.
 
 ### 🧩 Simple Diagram (Conceptually)
+
+
+CloudWatch checks CPU → triggers Auto Scaling → adjusts EC2 count.
+
+## 🔍 Advanced EC2 Questions
+
+### Q1. What is the difference between EC2 and a physical server?
+**👉** EC2 is a virtual machine that runs in AWS's data centers, while a physical server is your own hardware. In EC2, AWS manages the hardware — you only manage the software.
+
+### Q2. What is an EBS Volume?
+**👉** EBS (Elastic Block Store) is storage for EC2 instances — like a hard disk. When you launch an EC2, it uses EBS to store data (OS, files, etc.). You can detach, attach, or back it up easily.
+
+### Q3. What are the EC2 instance states?
+**👉**
+- **Pending** → being launched
+- **Running** → currently active
+- **Stopped** → powered off, can be restarted
+- **Terminated** → permanently deleted
+
+### Q4. What is the difference between an Elastic IP and a Public IP?
+**👉**
+- **Public IP** changes every time you stop/start an instance
+- **Elastic IP** stays the same even after reboot (static)
+
+### Q5. What are EC2 Placement Groups?
+**👉** Used to control how instances are placed on AWS hardware:
+- **Cluster** → high-performance computing (low latency)
+- **Spread** → separate hardware (for high availability)
+- **Partition** → for big data apps (isolates partitions)
+
+### Q6. What are EC2 Spot Instances used for?
+**👉** Spot Instances are cheap unused EC2 capacity — great for:
+- Batch jobs
+- Data analysis
+- Non-critical workloads
+
+⚠️ AWS can stop them anytime if demand increases.
+
+### Q7. What is an EC2 Launch Template?
+**👉** A template that saves EC2 settings (AMI, instance type, key pair, etc.) so you can launch new instances or Auto Scaling groups easily.
+
+### Q8. How can you connect to an EC2 instance?
+**👉**
+- **Linux EC2**: via SSH using .pem key
+- **Windows EC2**: via RDP using password or key
+
+## 🔍 Advanced CloudWatch Questions
+
+### Q1. What types of data can CloudWatch monitor?
+**👉** It monitors:
+- Metrics (CPU, memory, disk, etc.)
+- Logs (system or app logs)
+- Events (AWS resource changes)
+- Alarms (notifications or triggers)
+
+### Q2. What are Custom Metrics in CloudWatch?
+**👉** Metrics you send from your own application.
+
+**Example:** `PutMetricData API → sends "NumberOfActiveUsers" = 150`
+
+### Q3. What are CloudWatch Dashboards?
+**👉** A visual view (graphs and charts) to monitor your AWS resources in one place — you can combine CPU, RAM, and network graphs on a single screen.
+
+### Q4. What are CloudWatch Events (or EventBridge)?
+**👉** They react to changes in your AWS resources.
+
+**Example:** When an EC2 instance stops → automatically send an email or start another instance.
+
+### Q5. How long does CloudWatch store data?
+**👉**
+- 1-minute data points → stored for 15 days
+- 5-minute & 1-hour data → stored for 63 days (2 months)
+- Older (aggregated) data → stored for 15 months
+
+### Q6. Can CloudWatch monitor on-premise servers?
+**👉** Yes ✅ — you can install the CloudWatch Agent on your local servers to push metrics and logs to CloudWatch.
+
+## 🔍 Advanced Auto Scaling Questions
+
+### Q1. What is an Auto Scaling Group (ASG)?
+**👉** A logical group of EC2 instances that are managed together for scaling and availability.
+
+### Q2. What are scaling policies?
+**👉** Rules that define when and how to add or remove instances:
+- **Target Tracking** → keeps metric (like CPU) at target
+- **Step Scaling** → scales gradually
+- **Simple Scaling** → scales when a single alarm triggers
+- **Scheduled Scaling** → scales at fixed times
+
+### Q3. What is a Launch Configuration / Template in Auto Scaling?
+**👉** It defines how new instances will look — OS, instance type, security groups, key pair, etc.
+
+💡 **Launch Template** = newer version (recommended).
+
+### Q4. What happens if an instance in an Auto Scaling group fails?
+**👉** Auto Scaling automatically replaces unhealthy instances to maintain the desired count.
+
+### Q5. Can you use Auto Scaling without CloudWatch?
+**👉** Not really. CloudWatch metrics (like CPU usage) are used as triggers for scaling actions.
+
+### Q6. What are Lifecycle Hooks in Auto Scaling?
+**👉** They pause the instance during scaling (launch or terminate) so you can perform custom actions — like running a setup script or backup before it's deleted.
+
+### Q7. What's the difference between Vertical and Horizontal Scaling?
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Vertical** | Increase resources (CPU/RAM) of one server | t2.micro → t2.large |
+| **Horizontal** | Add more servers | Add 2 EC2s when traffic increases |
+
+Auto Scaling performs **Horizontal Scaling**.
+
+### Q8. How does Auto Scaling improve fault tolerance?
+**👉** If one instance fails, Auto Scaling automatically launches another to maintain performance and uptime.
+
+---
+
+## AWS IAM (Identity and Access Management)
+
+### 1. What is IAM?
+IAM is a security service that helps you control who can access your AWS resources and what they can do.
+
+*In simple words:*
+
+IAM is like the security guard of AWS — it decides who can enter (users) and what they can do (permissions).
+
+### Example:
+Imagine you have a company AWS account:
+- Developer manages EC2
+- Finance team views billing only
+- Admin manages everything
+
+IAM lets you create users, assign permissions, and apply security rules to do exactly that.
+
+### 2. Key Components of IAM
+| Component | Description | Example |
+| --------- | ----------- | ------- |
+| Users     | Individual accounts to access AWS | “yash_dev”, “finance_user” |
+| Groups    | Collection of users with same permissions | “Developers”, “Admins” |
+| Roles     | Temporary access to AWS services | EC2 assumes a role to access S3 |
+| Policies  | JSON documents that define permissions | Allow EC2 to read from S3 |
+| Access Keys | Used for programmatic access via CLI or SDK | Used by scripts or apps |
+
+### 3. Example Policy (Simple)
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+This policy allows the user full access to all S3 buckets.
+
+### 4. IAM Features
+- Granular permissions – control actions down to the resource level.
+- Free service – no cost.
+- Global – not region-specific.
+- Secure access – uses MFA (Multi-Factor Authentication).
+- Integration – works with all AWS services.
+
+### 5. Real-World Example
+- User: dev_john
+- Group: Developers
+- Policy: Allow access to EC2 and S3 only
+- Attach policy to group
+John can use EC2 and S3 but cannot delete IAM users or view billing.
+
+### 6. Common Interview Questions & Answers
+- **Q1: What is IAM in AWS?**
+  - A web service to securely control access to AWS resources.
+- **Q2: What are IAM Users?**
+  - Individual identities with long-term credentials.
+- **Q3: Difference between IAM User and IAM Role:**
+  | Feature | IAM User | IAM Role |
+  |---------|----------|----------|
+  | Access Type | Long-term credentials | Temporary credentials |
+  | Used By | Humans | AWS services or applications |
+  | Example | Developer logging in | EC2 instance accessing S3 |
+- **Q4: What is an IAM Policy?**
+  - JSON document defining permissions.
+- **Q5: What are IAM Groups?**
+  - Groups of users with shared permissions.
+- **Q6: What is IAM Role used for?**
+  - AWS services needing access to other services.
+- **Q7: What is MFA?**
+  - Extra security requiring password + device code.
+- **Q8: Types of IAM policies:**
+  | Type | Description |
+  |-------|-------------|
+  | AWS Managed Policy | Created/managed by AWS |
+  | Customer Managed Policy | Created/managed by you |
+  | Inline Policy | Directly attached to single user/group/role |
+- **Q9: What is the IAM Root User?**
+  - Original account with full access, use sparingly.
+- **Q10: What are IAM Access Keys?**
+  - Programmatic access credentials.
+- **Q11: Best practices to secure IAM:**
+  - Enable MFA, least privilege principle, rotate keys, don’t share credentials.
+
+---
+
+## Amazon EFS (Elastic File System)
+
+### 1. What is EFS?
+EFS is a fully managed, scalable file storage for Linux-based apps, attachable to multiple EC2 instances.
+
+*In simple words:*
+
+EFS is a shared network drive all your EC2s can use simultaneously.
+
+### 2. How it Works
+- Create EFS file system
+- Mount it to EC2 instances
+- Files are accessible simultaneously
+- AWS handles scaling, storage growth, and availability
+
+### 3. Simple Example
+Three EC2 web servers share the same images and logs using EFS instead of separate EBS volumes.
+
+### 4. EFS vs EBS vs S3
+| Feature | EFS | EBS | S3 |
+|---------|-----|-----|----|
+| Type | File storage | Block storage | Object storage |
+| Access | Many EC2s | One EC2 only | API/HTTP |
+| Scalability | Auto scales | Fixed size | Unlimited |
+| Performance | High throughput | High IOPS | Depends on access |
+| Use Case | Shared files across servers | OS or app disk | Backup/static files |
+
+### 5. EFS Architecture
+```
+Amazon Elastic File System (Shared Storage Across AZs)
+         ↑        ↑        ↑
+      EC2 #1    EC2 #2    EC2 #3
+     (All share same files)
+```
+
+### 6. Common Interview Questions & Answers
+- **Q1: What is Amazon EFS?**
+  - A managed network file system for concurrent multiple EC2 access.
+- **Q2: Difference between EFS and EBS:**
+  | Feature | EFS | EBS |
+  |---------|-----|-----|
+  | Access | Many EC2s | One EC2 at a time |
+  | Type | File system | Block storage |
+  | Scalability | Auto-scale | Fixed size |
+  | Use Case | Shared app data | OS/app disk |
+- **Q3: Performance modes:** General Purpose (low latency), Max I/O (high throughput)
+- **Q4: Throughput modes:** Bursting (auto), Provisioned (manual)
+- **Q5: Is EFS scalable?** Yes
+- **Q6: Multi-AZ accessible?** Yes
+- **Q7: Mount with NFS:** `sudo mount -t nfs4 -o nfsvers=4.1 fs-xxxx.efs.region.amazonaws.com:/ /mnt/efs`
+- **Q8: Supports Windows?** No
+- **Q9: Storage classes:** Standard and Infrequent Access (IA)
+- **Q10: Lifecycle Management:** Moves files between classes to save cost
+- **Q11: Mount targets:** Network endpoints per AZ
+- **Q12: Regional service?** Yes
+- **Q13: Billing:** Data stored, transfer, class
+- **Q14: Security:** IAM, encryption, security groups
+- **Q15: Use cases:** CMS, logs, analytics, media, shared apps
