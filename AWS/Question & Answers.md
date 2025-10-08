@@ -49,8 +49,7 @@ Your website is now live — all in the cloud 🌐
 - **Accelerated Computing** (p3, g4) – for ML or GPU workloads
 
 #### Q3. What are the different EC2 pricing models?
-**👉**
-- **On-Demand**: Pay per hour or second — no long-term contract.
+**👉** On-Demand**: Pay per hour or second — no long-term contract.
 - **Reserved Instances**: Commit for 1 or 3 years — cheaper.
 - **Spot Instances**: Unused EC2 capacity — up to 90% cheaper, but can be interrupted.
 - **Dedicated Hosts**: Physical servers dedicated to you.
