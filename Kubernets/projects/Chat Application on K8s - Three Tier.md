@@ -369,6 +369,57 @@ sudo -E kubectl port-forward service/frontend -n chat-app 80:80
 
 ---
 
+## Step 13: Ingress Setup
+
+To expose your services via a domain, create an ingress resource:
+
+`ingress.yml`
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chatapp-ingress
+  namespace: chat-app
+  labels:
+    name: myingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: chat-tws.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: frontend
+            port: 
+              number: 80
+      - pathType: Prefix
+        path: "/api"
+        backend:
+          service:
+            name: backend
+            port: 
+              number: 5001      
+```
+
+Apply and verify ingress:
+```bash
+kubectl apply -f ingress.yml
+kubectl get ing -n chat-app
+kubectl get ns 
+```
+
+If using Minikube, enable ingress addon:
+```bash
+minikube addons enable ingress
+```
+
+---
+
 ## References
 
 - [full-stack_chatApp GitHub repo](https://github.com/yash-deshpande24/full-stack_chatApp)
