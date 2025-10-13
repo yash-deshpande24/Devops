@@ -129,6 +129,8 @@ resource "aws_instance" "Bounce" {
 
 # variables.tf
 
+```hcl
+
 variable "vpc_cidr_block" {
   description = "The CIDR block for the VPC."
   type        = string
@@ -170,12 +172,12 @@ variable "key_pair" {
   type        = string
   default     = "key2"
 }
-
-
+```
 ----
 
 # main.tf
 
+```hcl
 resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr_block # Using a variable
 }
@@ -198,23 +200,25 @@ ami_id         = "ami-0c55b159cbfafe1f0" # Replace with a valid AMI ID
 inst_type      = "t3.micro"
 key_pair       = "tf-key2"
 
+```
 ---
 # outputs.tf
 
+```hcl
 output "public_ip" {
   description = "Public IP address of the EC2 instance"
   value       = aws_instance.web.public_ip
 }
-
+```
 --
 # Add this line to your ~/.bashrc or ~/.zshrc file
 alias tf='terraform'
 
-After setting the alias and reloading your shell, you can use tf as a shortcut for terraform.
-tf init - Initialize the Terraform working directory.
-tf validate - Validate the configuration files.
-tf plan - Create an execution plan.
-tf apply - Apply the changes to create or update infrastructure.
-tf output - View the output values from the state file.
+###After setting the alias and reloading your shell, you can use tf as a shortcut for terraform:
+- tf init - Initialize the Terraform working directory.
+- tf validate - Validate the configuration files.
+- tf plan - Create an execution plan.
+- tf apply - Apply the changes to create or update infrastructure.
+- tf output - View the output values from the state file.
 
 ---
