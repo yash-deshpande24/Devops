@@ -1,4 +1,4 @@
-# Variables (10/10/25)
+# Variables
 
 Variables store values/data that can be reused throughout the Terraform configuration.
 
