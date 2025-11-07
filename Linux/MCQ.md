@@ -780,192 +780,224 @@ What is found in the `/var` directory?
 
 ## Question 95:
 **Which command is used to switch to the root user?**  
+
 **Answer:** sudo -i
 
 ---
 
 ## Question 96:
 **What is the UID range for system users in Linux?** 
+
 **Answer:** 1 - 999
 
 ---
 
 ## Question 97:
 **Which command creates a local user and automatically creates a home directory?**
+
 **Answer:** adduser username
 
 ---
 
 ## Question 98:
 **What is the full path of the file that stores user account information?**  
+
 **Answer:** /etc/passwd
 
 ---
 
 ## Question 99:
-**What command is to switch from root to local user?**  
+**What command is to switch from root to local user?** 
+
 **Answer:** su - <username>
 
 ---
 
 ## Question 100:
 **What file stores encrypted passwords and password aging information?**  
+
 **Answer:** exit
 
 ---
 
 ## Question 101:
-**Command to delete user**  
+**Command to delete user** 
+
 **Answer:** userdel -r username
 
 ---
 
 ## Question 102:
-**How to see user password?**  
+**How to see user password?** 
+
 **Answer:** /etc/shadow
 
 ---
 
 ## Question 103:
-**What is command to add group?**  
+**What is command to add group?** 
+
 **Answer:** exit
 
 ---
 
 ## Question 104:
 **How to check groups?**  
+
 **Answer:** /etc/group
 
 ---
 
 ## Question 105:
 **How to add user in group?**  
+
 **Answer:**  `gpasswd -a username grpname`  or `usermod -aG grpname username`
 
 ---
 
 ## Question 106:
 **How to see group password ?**  
+
 **Answer:** /etc/gshadow
 
 ---
 
 ## Question 107:
-**How to remove user from group?**  
+**How to remove user from group?** 
+
 **Answer:** gpasswd -d username grpname
 
 ---
 
 ## Question 109:
 **How to add Admin user in group?**  
+
 **Answer:** gpasswd -A username grpname
 
 ---
 
 ## Question 110:
 **How to remove Admin user in group?**  
+
 **Answer:** gpasswd -A " " grpname
 
 ---
 
 ## Question 111:
-**How to delete group?**  
+**How to delete group?** 
+
 **Answer:** groupdel -f groupname
 
 ---
 
 ## Question 112:
 **How to change user id ?**  
+
 **Answer:** usermod -u 999 username
 
 ---
 
 ## Question 113:
 **How to add comment for user?**  
+
 **Answer:** usermod -c "Comment" username
 
 ---
 
 ## Question 114:
 **How user can not login to system?**  
+
 **Answer:** usermod -s /sbin/nologin username
 
 ---
 
 ## Question 115:
 **How user can  login to system?**  
+
 **Answer:** usermod -s /bin/bash username
 
 ---
 
 ## Question 116:
 **How to locked user password?**  
+
 **Answer:** usermod -L username
 
 ---
 
 ## Question 117:
 **How to unlocked user password?**  
+
 **Answer:** usermod -U username
 
 ---
 
 ## Question 118:
 **How to show user password field?**  
+
 **Answer:** chage -l username
 
 ---
 
 ## Question 119:
 **How to change minimum numbers of days?**  
+
 **Answer:** chage -m 6 username
 
 ---
 
 ## Question 120:
 **How to change maximum numbers of days?**  
+
 **Answer:** chage -M 9 username
 
 ---
 
 ## Question 121:
 **How to change  numbers of warning days?**  
+
 **Answer:** chage -W 9 username
 
 ---
 
 ## Question 122:
 **How to change password inactive days?**  
+
 **Answer:** chage -I 4 username
 
 ---
 
 ## Question 123:
 **How to change account Expiry date?**  
+
 **Answer:** chage -E "2025-6-1" username
 
 ---
 
 ## Question 124:
 **How to change at once all fields?**  
+
 **Answer:** chage -m 7 -M 9 -W 7 -I 4 -E "2025-4-3" username
 
 ---
 
 ## Question 125:
 **How to change password of group?**  
+
 **Answer:** gpasswd groupname
 
 ---
 
 ## Question 126:
-**How to change password of user?**  
+**How to change password of user?**
+
 **Answer:** passwd username
 
 ---
 
 ## Question 127:
 **How to add multiple user in group?**  
+
 **Answer:** gpasswd  -M user1,user2,user3 groupname
 
 ---
@@ -974,36 +1006,42 @@ What is found in the `/var` directory?
 
 ## Question 128:
 **What is permissions?**  
+
 **Answer:** Permissions determine who can access files
 
 ---
 
 ## Question 129:
 **Command to check file/dir permissions?**  
+
 **Answer:** ls -l
 
 ---
 
 ## Question 130:
 **To check particular file permissions?**  
+
 **Answer:** ll filename
 
 ---
 
 ## Question 131:
-**To check particular directory permissions?**  
+**To check particular directory permissions?**
+
 **Answer:** ll -d directoryname
 
 ---
 
 ## Question 132:
 **What are field of permissions?**  
+
 **Answer:** <img width="1316" height="397" alt="image" src="https://github.com/user-attachments/assets/d2c64465-95ac-48cd-a37b-289d20b2bd0c" />
 
 ---
 
 ## Question 133:
-**what are value of read, write, execute?**  
+**what are value of read, write, execute?**
+
 **Answer:** read=4 , write=2 ,execute=1
 
 ---
@@ -1028,18 +1066,21 @@ What is found in the `/var` directory?
 
 ## Question 135:
 **what is default permission of root user of file?**  
+
 **Answer:** 644
 
 ---
 
 ## Question 136:
 **what is default permission of root user of directory?**  
+
 **Answer:** 755
 
 ---
 
 ## Question 137:
 **what is default permission of local user of file?**  
+
 **Answer:** 664
 
 ---
@@ -1047,11 +1088,13 @@ What is found in the `/var` directory?
 
 ## Question 138:
 **what is default permission of local user of directory?**  
+
 **Answer:** 775
 
 ---
 ## Question 138:
 **To give permission to other user?**  
+
 **Answer:** `chmod o+w filename` or `chmod 666 filename`
 
 ---
@@ -1061,30 +1104,35 @@ What is found in the `/var` directory?
 
 ## Question 139:
 **what is umask?**  
+
 **Answer:** Setting permission for newly created file/dir and `Umask= Max Per - Default Per`
 
 ---
 
 ## Question 140:
 **what is umask of root user?**  
+
 **Answer:** 022
 
 ---
 
 ## Question 141:
 **what is umask of local user?**  
+
 **Answer:** 002
 
 ---
 
 ## Question 142:
 **To change ownership of file?**  
+
 **Answer:** chown username filename
 
 ---
 
 ## Question :
 **To change group owner of file?**  
+
 **Answer:** chgrp username filename
 
 ---
@@ -1094,24 +1142,28 @@ What is found in the `/var` directory?
 
 ## Question 144:
 **What is ACL?**  
+
 **Answer:** ACL is used to grant specific permissions to user for particular files or directories
 
 ---
 
 ## Question 145:
 **How to set permissions ?**  
+
 **Answer:** setfacl -m u:username:rwx filename
 
 ---
 
 ## Question 146:
-**How to get permissions ?**  
+**How to get permissions ?** 
+
 **Answer:** getfacl  filename
 
 ---
 
 ## Question 147:
 **How to remove permissions ?**  
+
 **Answer:** setfacl -x u:username: filename
 
 ---
@@ -1119,7 +1171,8 @@ What is found in the `/var` directory?
 # Link Types
 
 ## Question 148:
-**Difference b/w hardlink and softlink**  
+**Difference b/w hardlink and softlink**
+
 **Answer:** 
 | **Aspect**       | **Hard Link (HL)**                                 | **Soft Link (SL)**                             |
 |-------------------|---------------------------------------------------|-----------------------------------------------|
@@ -1134,18 +1187,21 @@ What is found in the `/var` directory?
 
 ## Question 149:
 **Command to make backupfile ?**  
+
 **Answer:** ln filename hardlink
 
 ---
 
 ## Question 150:
 **To check inode number of  all files ?**  
+
 **Answer:** ls -i
 
 ---
 
 ## Question 151:
 **To check inode number of  a file ?**  
+
 **Answer:** ls -i filename
 
 ---
