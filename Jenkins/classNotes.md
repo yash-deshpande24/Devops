@@ -428,3 +428,172 @@ sudo systemctl restart jenkins
 If you want, I can:
 - Add a sample `nginx` reverse-proxy config for Jenkins with LetsEncrypt.
 - Generate a cloud-init user-data script to provision Jenkins + Docker + Sonar automatically.
+
+---
+
+# Jenkins & DevOps Class Notes
+
+## Jenkins Setup
+
+### 1. Conduite: `id = posmed = admin`
+
+#### Create Token:
+- Go to: A data → any account → security → generate token
+
+---
+
+### Step 5: Instructions
+
+#### Instruction:
+1. Either tense or not
+2. Which is the word?
+3. What does some reason?
+
+---
+
+### Test Configuration:
+1. **Add JDK**
+   - Name: `jdk17`
+   - Install from: adoption.net
+   - Version: 17
+
+2. **Add Benevolue Scanner**
+   - Name: `genox-accessos`
+
+3. **Add Nodes**
+   - Name: `node16`
+   - Version: 16
+
+4. **Add Docker**
+
+---
+
+## Step 6: Credentials
+
+### Global Credentials:
+- Global → Add credentials
+- Reset text
+- `id = doersp = zeros-token`
+- `secret = pairs_token`
+
+### Add Credentials and Data:
+- None: `doctor-usman`
+- Password ↔
+- `id = doersp = doctor-used`
+
+### Manage Testing → Testing:
+- Environment variables
+- None: `/cona-sense`
+- User
+- `token = data + sense_token`
+
+---
+
+## Step 7: Retat
+- `switch = return`
+
+---
+
+## Step 8: New Item
+- Name: `netflix → prepare`
+- Pipeline script: Paste from pipeline setup
+
+**Note:** Change Repo & image name
+
+---
+
+## Step 9: Buchliste
+
+| Name | FJ | Resume / found & initial | +ner Agoin |
+|------|-----|--------------------------|------------|
+|      |     | Consolidated             |            |
+
+---
+
+## Step 10: Check
+- Check `1p:8081`
+
+---
+
+## Infrastructure Setup
+
+### Instance Creation (Step 1):
+- Ubuntu instance
+- All traffic allowed
+- 30 GB storage
+- t2 large instance type
+
+### Step 2: Connect the instance
+
+### Services to Install:
+- Create similar UI: ❌ counter database @ container
+- Install Node.js
+- Install Docker
+- Install SonarQube
+
+### Port Checks:
+- Check `ip:8080` (Node)
+- Check `ip:9000` (SonarQube)
+
+### EKS Configuration:
+- Change version: 1.33
+- Configure Region
+- Instance sizes: large, small
+
+---
+
+## Pipeline Notes
+
+### Pipeline Changes:
+- Change procedure
+- Change environment
+- Build Now
+
+### Important Notes:
+- If paused, there is no image and it is not displayed
+
+---
+
+## Kubernetes & ArgoCD
+
+### Step 6 - Kubernetes Operations:
+- Work with nodes
+- Create a namespace
+- Apply ArgoCD
+- Wait 2-3 minutes
+- Check pods → argoed → add user
+
+### ArgoCD Setup:
+- argoed → add user
+- ad ad user
+
+---
+
+## Helm Notes
+
+### Helm Definition:
+- Helm is a package manager in Kubernetes
+- Helm is used to deploy, manage, and applications on Kubernetes
+
+---
+
+## Miscellaneous Notes
+
+### Date Formats:
+- Multiple dates mentioned throughout notes
+- Format: `c/11/25` and others
+
+### Language Notes:
+- Mix of English, French, and Arabic technical terms
+- Various technical concepts and configurations
+
+### Project Checks:
+- Destination: `#detd "dat"`
+- Nomogacé: dragon à
+- Gest click & check project
+- Siège II: En sauve
+
+### Kubernetes Commands:
+- `kubect1 get pods`
+- `kubect1 get ave`
+- Check link ✓
