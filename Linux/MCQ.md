@@ -316,6 +316,7 @@ Kali Linux – Used for ethical hacking and penetration testing
 ##  Question 30:
 
 **Which command provides disk usage information in human-readable format?**
+
 **Answer:** `df -h`
 
 ##  Question 31:
