@@ -1,15 +1,11 @@
 # Create a comprehensive DevOps interview Q&A text file for the user
 
-<!-- This is a hidden comment in the rendered Markdown file
 content = """
 DEVOPS INTERVIEW QUESTIONS & ANSWERS (1.5 YEARS EXPERIENCE)
 ========================================================
--->
 
 SECTION 1: HR & INTRODUCTION
 ----------------------------
-
-<!-- This is a hidden comment in the rendered Markdown file 
 
 Q1. Tell me about yourself.
 A. I’m a Cloud & DevOps Engineer with around 1.5 years of hands-on experience working on AWS and DevOps tools. 
@@ -17,8 +13,6 @@ I have worked with AWS services like EC2, VPC, IAM, ALB, Auto Scaling, and EKS.
 I have implemented CI/CD pipelines using Jenkins and GitHub, containerized applications using Docker, 
 and deployed them on Kubernetes. I also have experience with Terraform, Linux administration, 
 monitoring, and troubleshooting.
--->
-
 
 Q2. Why did you switch from Backend to DevOps?
 A. While working on backend development, I became more interested in how applications are deployed, scaled, 
@@ -150,3 +144,5 @@ A. Using rolling updates, load balancers, and auto scaling.
 ========================================================
 END OF FILE
 """
+
+file_path
