@@ -1,8 +1,10 @@
 # Create a comprehensive DevOps interview Q&A text file for the user
 
+<!-- This is a hidden comment in the rendered Markdown file
 content = """
 DEVOPS INTERVIEW QUESTIONS & ANSWERS (1.5 YEARS EXPERIENCE)
 ========================================================
+-->
 
 SECTION 1: HR & INTRODUCTION
 ----------------------------
