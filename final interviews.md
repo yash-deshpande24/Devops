@@ -150,10 +150,3 @@ A. Using rolling updates, load balancers, and auto scaling.
 ========================================================
 END OF FILE
 """
-
-file_path = "/mnt/data/DevOps_Interview_Questions_Answers.txt"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(content)
-
-file_path
-f
