@@ -1500,3 +1500,339 @@ Examples:
 
 50. How do you restart Docker service?  
     `systemctl restart docker`
+
+# Docker Interview Questions — Extended Set
+
+This file contains grouped Docker interview questions covering Dockerfile & image building, commands & container management, networking, volumes, Compose, and troubleshooting. Use this as a study sheet or convert it into flashcards.
+
+---
+
+## Dockerfile & Image Building (1–50)
+
+1. What is a Dockerfile?  
+2. What does FROM instruction do?  
+3. Difference between CMD and ENTRYPOINT?  
+4. What is RUN instruction?  
+5. COPY vs ADD?  
+6. What is WORKDIR?  
+7. What is ENV?  
+8. What is ARG?  
+9. What is multi-stage build?  
+10. Why use Alpine images?  
+11. What are Docker image layers?  
+12. How does layer caching work?  
+13. How to reduce image size?  
+14. What is base image?  
+15. What is image tag?  
+16. What is docker build?  
+17. What is build context?  
+18. What is .dockerignore?  
+19. What is image digest?  
+20. What is docker history?  
+21. What is docker save?  
+22. What is docker load?  
+23. What is HEALTHCHECK?  
+24. What is LABEL?  
+25. What is USER instruction?  
+26. What is VOLUME instruction?  
+27. What is EXPOSE instruction?  
+28. What is ENTRYPOINT script?  
+29. What is ONBUILD?  
+30. What is scratch image?  
+31. What is immutable image?  
+32. How to optimize RUN commands?  
+33. What is BuildKit?  
+34. How to rebuild without cache?  
+35. What is image registry?  
+36. How to tag image?  
+37. How to push image?  
+38. What is docker commit?  
+39. What is image manifest?  
+40. What is container filesystem layer?  
+41. Why combine RUN commands?  
+42. What is dependency installation layer?  
+43. What is build argument usage?  
+44. What is shell form vs exec form?  
+45. What is image reproducibility?  
+46. What is container image scanning?  
+47. What is docker export?  
+48. What is docker import?  
+49. What is ENTRYPOINT override?  
+50. Why is Dockerfile order important?
+
+---
+
+## Docker Commands & Container Management (51–100)
+
+51. What does docker run do?  
+52. What is docker ps?  
+53. What is docker stop?  
+54. What is docker start?  
+55. What is docker rm?  
+56. What is docker exec?  
+57. What is docker logs?  
+58. What is docker inspect?  
+59. What is docker stats?  
+60. What is docker top?  
+61. What is docker kill?  
+62. What is docker restart?  
+63. What is docker attach?  
+64. What is docker pause?  
+65. What is docker unpause?  
+66. What is container ID?  
+67. What is container name?  
+68. What is detached mode?  
+69. What is interactive mode?  
+70. What is STDIN flag?  
+71. What is restart policy?  
+72. What is --name flag?  
+73. What is port mapping?  
+74. What is environment variable flag?  
+75. What is container lifecycle?  
+76. What is docker rename?  
+77. What is docker wait?  
+78. What is docker cp?  
+79. What is docker diff?  
+80. What is docker update?  
+81. What is foreground container?  
+82. What is background container?  
+83. What is container logging?  
+84. What is container health status?  
+85. What is docker system prune?  
+86. What is docker image prune?  
+87. What is docker container prune?  
+88. What is container exit code?  
+89. What is PID 1 process?  
+90. What is TTY?  
+91. What is Docker CLI?  
+92. What is daemon communication?  
+93. What is container runtime?  
+94. What is docker version?  
+95. What is docker info?  
+96. What is container metadata?  
+97. What is container configuration?  
+98. What is container isolation?  
+99. What is command override?  
+100. What is container execution mode?
+
+---
+
+## Docker Networking (101–150)
+
+101. What is Docker networking?  
+102. What is bridge network?  
+103. What is host network?  
+104. What is overlay network?  
+105. What is none network?  
+106. What is port publishing?  
+107. What is container IP?  
+108. What is DNS inside Docker?  
+109. What is network namespace?  
+110. What is network driver?  
+111. What is docker network create?  
+112. What is docker network ls?  
+113. What is docker network inspect?  
+114. What is docker network connect?  
+115. What is docker network disconnect?  
+116. What is service discovery?  
+117. What is container hostname?  
+118. What is network alias?  
+119. What is gateway?  
+120. What is subnet?  
+121. What is IPAM?  
+122. What is static container IP?  
+123. What is loopback network?  
+124. What is container communication?  
+125. What is firewall interaction?  
+126. What is NAT in Docker?  
+127. What is port binding?  
+128. What is internal network?  
+129. What is external network?  
+130. What is network isolation?  
+131. What is DNS resolution?  
+132. What is multi-host networking?  
+133. What is ingress network?  
+134. What is container port vs host port?  
+135. What is IPv6 support?  
+136. What is network plugin?  
+137. What is load balancing in Docker?  
+138. What is overlay encryption?  
+139. What is bridge gateway?  
+140. What is container routing?  
+141. What is network attachable?  
+142. What is container endpoint?  
+143. What is network scope?  
+144. What is MAC address assignment?  
+145. What is container link?  
+146. What is network stack?  
+147. What is port exposure?  
+148. What is network latency?  
+149. What is DNS caching?  
+150. What is network configuration?
+
+---
+
+## Docker Volumes (151–200)
+
+151. What is Docker volume?  
+152. What is bind mount?  
+153. What is tmpfs mount?  
+154. What is volume driver?  
+155. What is local volume?  
+156. What is named volume?  
+157. What is anonymous volume?  
+158. What is volume lifecycle?  
+159. What is data persistence?  
+160. What is mount point?  
+161. What is docker volume create?  
+162. What is docker volume ls?  
+163. What is docker volume inspect?  
+164. What is docker volume rm?  
+165. What is volume pruning?  
+166. What is read-only mount?  
+167. What is shared volume?  
+168. What is storage driver?  
+169. What is overlay2?  
+170. What is filesystem isolation?  
+171. What is mount propagation?  
+172. What is volume backup?  
+173. What is volume restore?  
+174. What is NFS volume?  
+175. What is CIFS volume?  
+176. What is cloud volume plugin?  
+177. What is container writable layer?  
+178. What is host path mount?  
+179. What is data integrity?  
+180. What is volume security?  
+181. What is mount permission?  
+182. What is storage backend?  
+183. What is volume metadata?  
+184. What is volume container?  
+185. What is Docker storage architecture?  
+186. What is disk usage monitoring?  
+187. What is storage cleanup?  
+188. What is container storage limit?  
+189. What is snapshot backup?  
+190. What is file locking?  
+191. What is shared filesystem?  
+192. What is persistent service data?  
+193. What is mount consistency?  
+194. What is filesystem driver?  
+195. What is data synchronization?  
+196. What is storage performance?  
+197. What is volume isolation?  
+198. What is distributed storage?  
+199. What is backup automation?  
+200. What is storage scaling?
+
+---
+
+## Docker Compose (201–250)
+
+201. What is Docker Compose?  
+202. What is docker-compose.yml?  
+203. What is service in Compose?  
+204. What is compose network?  
+205. What is compose volume?  
+206. What is compose build?  
+207. What is compose image?  
+208. What is compose environment?  
+209. What is compose ports?  
+210. What is compose depends_on?  
+211. What is docker-compose up?  
+212. What is docker-compose down?  
+213. What is docker-compose build?  
+214. What is docker-compose logs?  
+215. What is docker-compose ps?  
+216. What is compose scaling?  
+217. What is compose restart?  
+218. What is compose config?  
+219. What is compose override file?  
+220. What is compose project name?  
+221. What is compose profiles?  
+222. What is compose secrets?  
+223. What is compose configs?  
+224. What is compose healthcheck?  
+225. What is compose restart policy?  
+226. What is compose network driver?  
+227. What is compose external network?  
+228. What is compose external volume?  
+229. What is compose build context?  
+230. What is compose command override?  
+231. What is compose entrypoint override?  
+232. What is compose logging?  
+233. What is compose container naming?  
+234. What is compose variable substitution?  
+235. What is compose extension field?  
+236. What is compose lifecycle?  
+237. What is compose dependency order?  
+238. What is compose multi-container app?  
+239. What is compose development workflow?  
+240. What is compose production config?  
+241. What is compose service discovery?  
+242. What is compose port mapping?  
+243. What is compose volume mount?  
+244. What is compose network isolation?  
+245. What is compose environment file?  
+246. What is compose build cache?  
+247. What is compose container recreation?  
+248. What is compose resource limits?  
+249. What is compose scaling command?  
+250. What is compose deployment?
+
+---
+
+## Docker Troubleshooting (251–300)
+
+251. Container not starting — what to check?  
+252. Container exits immediately — why?  
+253. Port not accessible — what to verify?  
+254. Volume not persisting — why?  
+255. Image build failing — first step?  
+256. Permission denied inside container — cause?  
+257. Cannot pull image — reason?  
+258. Cannot push image — reason?  
+259. Container restarting repeatedly — cause?  
+260. Logs not showing — why?  
+261. Docker daemon not running — fix?  
+262. Disk space full — solution?  
+263. High CPU container — check?  
+264. Memory issue container — fix?  
+265. Container cannot reach internet — why?  
+266. Two containers cannot communicate — why?  
+267. DNS failure in container — fix?  
+268. Compose service not starting — check?  
+269. YAML syntax error — fix?  
+270. Container name conflict — fix?  
+271. Image outdated — solution?  
+272. Dockerfile build slow — fix?  
+273. Build cache not used — why?  
+274. ENTRYPOINT failing — check?  
+275. CMD ignored — why?  
+276. Bind mount not working — why?  
+277. Volume permission error — fix?  
+278. Docker login fails — why?  
+279. Registry timeout — cause?  
+280. Container healthcheck failing — why?  
+281. Container logs too large — fix?  
+282. Container stuck stopping — fix?  
+283. Docker network missing — fix?  
+284. Compose env variable missing — fix?  
+285. Service dependency issue — fix?  
+286. Container cannot write file — fix?  
+287. Host file not visible — why?  
+288. Container timezone wrong — fix?  
+289. Restart policy not working — why?  
+290. Container resource limit ignored — why?  
+291. Container process not visible — why?  
+292. Docker service crash — recovery?  
+293. Overlay network not working — cause?  
+294. Image push permission denied — why?  
+295. Docker CLI not responding — fix?  
+296. Container exec fails — why?  
+297. Container IP changed — why?  
+298. Docker update fails — why?  
+299. Compose rebuild required — when?  
+300. Docker environment mismatch — fix?
+
+---
