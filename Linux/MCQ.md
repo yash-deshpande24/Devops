@@ -33,6 +33,11 @@
 ## Question 5:
 **What are models in SDLC?**
 
+
+
+
+
+
 ---
 
 ### 1. 🔹 Waterfall Model
